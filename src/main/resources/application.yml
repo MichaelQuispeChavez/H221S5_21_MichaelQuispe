@@ -1,6 +1,0 @@
-server:
-  port: 9090
-spring:
-  data:
-    mongodb:
-      uri: "mongodb+srv://divinex:qiwTHEeeJVj2M3dp@divinex.txdcsgc.mongodb.net/divinex?retryWrites=true&w=majority"
