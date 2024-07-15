@@ -4,8 +4,8 @@ import org.springframework.web.bind.annotation.*;
 import pe.edu.vallegrande.h221s5_21michaelquispe.model.IpQuery;
 import pe.edu.vallegrande.h221s5_21michaelquispe.service.IpService;
 import reactor.core.publisher.Mono;
-
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/v1")
 public class IpController {
     private final IpService ipService;
