@@ -1,21 +1,29 @@
-<div class="container mx-auto p-4">
-    <h1 class="text-2xl font-bold mb-4">IP Query</h1>
-    
-    <div class="mb-4">
-      <h2 class="text-xl font-semibold">My IP</h2>
-      <pre>{{ myIp | json }}</pre>
-    </div>
-  
-    <div class="mb-4">
-      <h2 class="text-xl font-semibold">IP Details</h2>
-      <pre>{{ ipDetails | json }}</pre>
-    </div>
-  
-    <div class="mb-4">
-      <h2 class="text-xl font-semibold">Query IP</h2>
-      <input [(ngModel)]="ipToQuery" class="border rounded p-2 mr-2" placeholder="Enter IP to query">
-      <button (click)="queryIp()" class="bg-blue-500 text-white p-2 rounded">Query</button>
-      <pre>{{ queryIpResult | json }}</pre>
+<div class="min-h-screen bg-gray-900 text-gray-100 p-6">
+
+
+  <div class="grid grid-cols-1 gap-4">
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h1 class="text-3xl font-bold mb-2 text-center">ESTUDIANTE: MICHAEL JOSEPH QUISPE CHAVEZ</h1>
+      <h2 class="text-2xl font-semibold mb-4 text-green-400">Mi IP</h2>
+      <div class="bg-gray-700 p-4 rounded-lg text-lg text-center">
+        {{ myIp?.ip }}
+      </div>
     </div>
   </div>
-  
+
+  <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8">
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-semibold mb-4 text-green-400">Detalles de IP</h2>
+      <pre class="bg-gray-700 p-4 rounded-lg overflow-auto max-h-64 custom-scrollbar">{{ ipDetails | json }}</pre>
+    </div>
+
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-semibold mb-4 text-green-400">Consulta de IP</h2>
+      <div class="flex mb-4">
+        <input [(ngModel)]="ipToQuery" class="flex-grow bg-gray-700 border border-gray-600 rounded-l-lg p-2 text-gray-200 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Ingrese IP para consultar">
+        <button (click)="queryIp()" class="bg-green-500 hover:bg-green-600 text-gray-100 p-2 rounded-r-lg focus:outline-none focus:ring-2 focus:ring-green-400">Consultar</button>
+      </div>
+      <pre class="bg-gray-700 p-4 rounded-lg overflow-auto max-h-64 custom-scrollbar">{{ queryIpResult | json }}</pre>
+    </div>
+  </div>
+</div>
